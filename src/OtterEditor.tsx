@@ -48,11 +48,17 @@ export const OtterEditor: React.FunctionComponent<OtterWYSIWYGOptions> = (
         className="otter-editor"
         style={
           theme === "light"
-            ? { backgroundColor: "white", height: "100%", width: "100%" }
+            ? {
+                backgroundColor: "white",
+                height: "100%",
+                width: "100%",
+                position: "relative",
+              }
             : {
                 backgroundColor: "rgb(26, 27, 30)",
                 height: "100%",
                 width: "100%",
+                position: "relative",
               }
         }
         ref={editor}
@@ -81,22 +87,23 @@ export const OtterEditor: React.FunctionComponent<OtterWYSIWYGOptions> = (
           ]}
           addOtterComponent={addOtterComponent}
         />
-        {!otterComponentsDrawerOpened && editor.current && (
-          <Affix position={{ bottom: 20, left: 20 }} target={editor.current}>
-            <Button
-              variant="gradient"
-              gradient={{ from: "indigo", to: "cyan" }}
-              style={{
-                borderRadius: "50%",
-                height: 50,
-                width: 50,
-                fontSize: 20,
-              }}
-              onClick={() => setOtterComponentsDrawerOpened(true)}
-            >
-              +
-            </Button>
-          </Affix>
+        {!otterComponentsDrawerOpened && (
+          <Button
+            variant="gradient"
+            gradient={{ from: "indigo", to: "cyan" }}
+            style={{
+              borderRadius: "50%",
+              height: 50,
+              width: 50,
+              fontSize: 20,
+              position: "fixed",
+              bottom: 20,
+              left: 20,
+            }}
+            onClick={() => setOtterComponentsDrawerOpened(true)}
+          >
+            +
+          </Button>
         )}
       </div>
     </MantineProvider>

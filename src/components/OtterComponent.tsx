@@ -15,7 +15,7 @@ export const OtterComponent: React.FunctionComponent<props> = (props) => {
           : {}
       }
     >
-      Your text here
+      <input type="text" value="Lorem ipsum lorem ipsum lorem ipsum" />
     </div>
   ) : (
     <div>d</div>

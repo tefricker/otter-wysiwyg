@@ -16,8 +16,9 @@ export const PageNavBar: React.FunctionComponent<props> = (props) => {
       onTabChange={(i) => {
         if (i === pages.length) {
           addPage();
+          setActivePage(i);
         } else {
-          setActivePage;
+          setActivePage(i);
         }
       }}
     >
